@@ -1,0 +1,6 @@
+# macOS metadata (including files outside the example project folders)
+.DS_Store
+._*
+
+# Project-specific dependencies, caches, and build outputs are covered by
+# the .gitignore files inside partie_1 and partie_2.

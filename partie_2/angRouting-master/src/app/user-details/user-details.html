@@ -1,0 +1,28 @@
+<h2>User Details</h2>
+
+@if (user) {
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Phone</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.phone || 'Not provided' }}</td>
+        <td>{{ user.email || 'Not provided' }}</td>
+      </tr>
+    </tbody>
+  </table>
+} @else {
+  <p>No information submitted yet. Please complete the form first.</p>
+}
+
+<a routerLink="/users" class="btn btn-primary">
+  Back to form
+</a>

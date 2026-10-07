@@ -1,0 +1,54 @@
+<h2>User Information</h2>
+
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="firstName" class="form-label">First name</label>
+    <input id="firstName" class="form-control"
+           formControlName="firstName">
+
+    @if (userForm.controls.firstName.touched &&
+         userForm.controls.firstName.invalid) {
+      <div class="text-danger">First name is required.</div>
+    }
+  </div>
+
+  <div class="mb-3">
+    <label for="lastName" class="form-label">Last name</label>
+    <input id="lastName" class="form-control"
+           formControlName="lastName">
+
+    @if (userForm.controls.lastName.touched &&
+         userForm.controls.lastName.invalid) {
+      <div class="text-danger">Last name is required.</div>
+    }
+  </div>
+
+  <div class="mb-3">
+    <label for="phone" class="form-label">Phone (optional)</label>
+    <input id="phone" type="tel" class="form-control"
+           formControlName="phone">
+
+    @if (userForm.controls.phone.touched &&
+         userForm.controls.phone.invalid) {
+      <div class="text-danger">
+        Enter exactly 10 digits. The first and fourth digits cannot be 0.
+      </div>
+    }
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input id="email" type="email" class="form-control"
+           formControlName="email">
+
+    @if (userForm.controls.email.touched &&
+         userForm.controls.email.invalid) {
+      <div class="text-danger">Enter a valid email address.</div>
+    }
+  </div>
+
+	<button type="submit" class="btn btn-success"
+	        [disabled]="userForm.invalid">
+	  Submit
+	</button>
+</form>
